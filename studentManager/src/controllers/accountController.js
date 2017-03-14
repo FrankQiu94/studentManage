@@ -16,14 +16,16 @@ exports.getLoginPage = (req, res) => {
 };
 
 exports.login = (req,res) => {
-	const url = "mongodb://127.0.0.1/27017/it-test";
+	const url = "mongodb://127.0.0.1:27017/it-test";
 	MongoClient.connect(url, (err, db) => {
+		console.log(db);
 		db.collection("account").findOne({
 			//多个条件用逗号隔开
 			username:req.body.uname,
 			password:req.body.pwd,
 			status:0
 		}),(err, doc) => {
+			console.log(doc);
 			if(doc != null) {
 				//登录成功
 				res.end("登录成功！");
