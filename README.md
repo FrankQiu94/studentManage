@@ -18,40 +18,21 @@ const app = express();
 ...
 ```
 
->studentManager
->>dist(Sorry for I have not packaged yet)
->>node_modules
->>>xtpl
->>>xtemplate
->>>mongodb
->>>express-session
->>>express
->>>body-parser
->>src
->>>controllers
->>>>accountController.js
->>>>studentController.js
->>>routers
->>>>accountRouter.js
->>>>studentRouter.js
->>>statics
->>>>css
->>>>>site.css
->>>>js
->>>>lib
->>>>>bootstrap
->>>>>>css
->>>>>>js
->>>>>jquery.min.js
->>>>>md5.js
->>>tool
->>>>databaseManager.js
->>>views
->>>>add.html
->>>>edit.html
->>>>login.html
->>>>parent.html
->>>>register.html
->>>>studentList.html
->>app.js
->>package.json
+
+###########目录结构描述
+├── README.md                   // help
+├── app.js                      // 应用
+├── src                         // 所有使用到的文件
+│   ├── controllers             // 路由导向的控制器
+│   ├── routers                 // 路由
+│   ├── tool                    // 数据库中间件
+│   ├── views                   // 路由导向的页面  
+│   └── statics                 // 静态资源
+│       ├── css
+│       ├── js
+│       └── lib                 // 引用的库 
+│           ├── md5.js          // md5加密文件   
+│           ├── jquery.min.js
+│           └── bootstrap        
+├── node_modules
+└── package.json
