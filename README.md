@@ -19,20 +19,20 @@ const app = express();
 ```
 
 
-###########目录结构描述
-├── README.md                   // help
-├── app.js                      // 应用
-├── src                         // 所有使用到的文件
-│   ├── controllers             // 路由导向的控制器
-│   ├── routers                 // 路由
-│   ├── tool                    // 数据库中间件
-│   ├── views                   // 路由导向的页面  
-│   └── statics                 // 静态资源
-│       ├── css
-│       ├── js
-│       └── lib                 // 引用的库 
-│           ├── md5.js          // md5加密文件   
-│           ├── jquery.min.js
-│           └── bootstrap        
-├── node_modules
-└── package.json
+###########目录结构描述  
+├── README.md                   // help   
+├── app.js                      // 应用  
+├── src                         // 所有使用到的文件  
+│   ├── controllers             // 路由导向的控制器  
+│   ├── routers                 // 路由  
+│   ├── tool                    // 数据库中间件  
+│   ├── views                   // 路由导向的页面    
+│   └── statics                 // 静态资源  
+│       ├── css  
+│       ├── js  
+│       └── lib                 // 引用的库   
+│           ├── md5.js          // md5加密文件     
+│           ├── jquery.min.js  
+│           └── bootstrap          
+├── node_modules  
+└── package.json  
