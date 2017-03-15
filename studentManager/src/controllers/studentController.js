@@ -20,8 +20,10 @@ exports.getStudentList = (req,res) => {
 	// 		})
 	// 	})
 	// })
-	databaseManager.find("studentinfo",{},(err,docs) => {
-		xtpl.renderFile(path.join(__dirname,"../views/studentList.html"),{studentlist:docs},(err,content) => {
+	const keyWord = req.query.keyword || "";
+
+	databaseManager.find("studentinfo",{name:{$regex:keyWord}},(err,docs) => {
+		xtpl.renderFile(path.join(__dirname,"../views/studentList.html"),{studentlist:docs, keyword:keyWord, loginedname:req.session.username},(err,content) => {
 			if(err) {
 				console.log(err);
 			} else {
@@ -34,7 +36,7 @@ exports.getStudentList = (req,res) => {
 };
 
 exports.getAddPage = (req,res) => {
-	xtpl.renderFile(path.join(__dirname,"../views/add.html"),(err,content) => {
+	xtpl.renderFile(path.join(__dirname,"../views/add.html"),{loginedname:req.session.username},(err,content) => {
 		if(err) {
 			console.log(err);
 		} else {
@@ -67,7 +69,7 @@ exports.getEditPage = (req,res) => {
     const studentId = req.params.studentId;
     console.log(1233);
 	databaseManager.findOne("studentinfo",{_id:databaseManager.ObjectId(studentId)},(err,docs) => {
-		xtpl.renderFile(path.join(__dirname,"../views/edit.html"),{studentInfo:docs},(err,content) => {
+		xtpl.renderFile(path.join(__dirname,"../views/edit.html"),{studentInfo:docs,loginedname:req.session.username},(err,content) => {
 			if(err) {
 				console.log(err);
 			} else {
