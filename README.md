@@ -12,7 +12,6 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const bodyParser = require("body-parser");
 const session = require("express-session");
 const app = express();
 ...
@@ -36,3 +35,9 @@ const app = express();
 │           └── bootstrap          
 ├── node_modules  
 └── package.json  
+
+开启方式: Terminal  cd到该文件夹，
+```bash
+node app.js
+```
+即可打开
